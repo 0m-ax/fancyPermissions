@@ -9,6 +9,6 @@
   "author": "max campbell",
   "license": "ISC",
   "dependencies": {
-    "fancymatch": "^1.0.1"
+    "fancymatch": "^2.0.0"
   }
 }
