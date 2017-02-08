@@ -20,16 +20,16 @@ const FancyPermissionsStatic = {
     }
 };
 //load permissions
-const Permissions = require('../').Permissions(FancyPermissionsStatic);
+const fancyPermissions = require('../').init(FancyPermissionsStatic);
 //set default permissions
 app.use(
-    require('../').setDefault({
+    fancyPermissions.middleware({
         allowed:['signup.**']
     })
 );
 //added user object to req
 app.use((req,res,next)=>{
-    Permissions({
+    fancyPermissions.buildTree({
         allowed:['part2.home'],
         disallowed:['part1.home'],
         inherit:['group1']
